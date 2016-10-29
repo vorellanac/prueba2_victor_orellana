@@ -8,3 +8,12 @@
 
 Category.destroy_all
 Item.destroy_all
+User.destroy_all
+
+neumatico = Category.create!(name: "Neumaticos")
+llantas = Category.create!(name: "Llantas")
+
+
+Item.create!(serial: 100, size: 2, description: 'Neumaticos R13', category_id: Category.where(name: 'Neumaticos').first.id)
+Item.create!(serial: 29, size: 3, description: 'Llantas R13', category_id: Category.where(name: 'Llantas').first.id)
+# cat2.products.build(precio: 200, category_id: Category.where(name: 'Category2').first.id).save!
